@@ -4,8 +4,8 @@ function computerChoice() {
 }
 
 function humanChoice () {
-let decision= prompt("Choose one, rock paper or scissors");
-return decision;
+let decision= prompt("Choose one: Rock, Paper or Scissors");
+return decision.toLowerCase();
 }
 
 const gHumanChoice = humanChoice();
@@ -14,9 +14,9 @@ const gComputerChoice = computerChoice ();
 
 function playRound () {
 const winDialogue = "You win! 10 points to Gryffindor!";
-const loseDialogue = "You lost to a machine, Quick! Run for your life!";
+const loseDialogue = "You lost to a machine, Quick! Run for your life/!";
 const drawDialogue = "Draw! Lets go again!";
-const errorDialogue = "Uh oh, something is wrong!";
+const errorDialogue = "Wrong input, it should be only Rock, Paper or Scissors !";
 
 if (gHumanChoice) 
 { 
@@ -40,10 +40,15 @@ if (gHumanChoice)
     {
         alert (drawDialogue);
     }
-}
-else {
-    alert (errorDialogue);
-}
+    
+    else if (gHumanChoice !== "rock" || 
+        gHumanChoice !=="paper" || 
+        gHumanChoice !== "scissors") 
+    {
+        alert (errorDialogue);
+    }
+}  //condition ends
 
-}
-playRound(gComputerChoice, gHumanChoice);
+} //function ends
+
+playRound();
